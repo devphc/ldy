@@ -14,6 +14,7 @@ Meteor.methods({
             cmbArea: args.cmbArea,
             address: args.address,
             liuyan: args.liuyan,
+            productName: args.productName,
             createAt: args.createAt
         });
         return args;

@@ -77,7 +77,7 @@
 //             render: function(r) {return "<a onclick='editInfo(\"" + r._id + "\")'>详细</a>";}
 //         },{
 //             display: ' ',
-//             render: function(r) {return "<a href='/records?tel=" + r.tel + "'>档案</a>";}
+//             render: function(r) {return "<a href='/contacts?tel=" + r.tel + "'>档案</a>";}
 //         }],
 //         dataAction:"local",
 //         allowAdjustColWidth:true,

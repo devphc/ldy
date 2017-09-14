@@ -1,5 +1,5 @@
 Meteor.startup(function () {
-    navigations.add("index", "订单管理", "/", "cart-arrow-down");
+    navigations.add("index", "华夏国礼轩", "/", "cart-arrow-down");
 });
 
 FlowRouter.route('/', {
@@ -21,6 +21,7 @@ Template.orders.onRendered(function () {
     var grid = $("#datagrid").ligerGrid({
         columns: [{
             display: '日期',
+            width: 80,
             render: function (r, d) {
                 if (format(r.createAt) === format(new Date())) {
                     return '今天';
@@ -30,35 +31,48 @@ Template.orders.onRendered(function () {
             }
         }, {
             display: '时间',
+            width: 80,
             render: function (r, d) {
                 return format2(r.createAt);
             }
         }, {
+            display: '产品',
+            width: 200,
+            render: function (r, d) {
+
+                return r.productName
+            }
+        }, {
             display: '姓名',
+            width: 80,
             render: function (r, d) {
 
                 return r.username
             }
         }, {
             display: '手机号',
+            width: 100,
             render: function (r, d) {
 
                 return r.tel
             }
         }, {
             display: '省份',
+            width: 80,
             render: function (r, d) {
 
                 return r.cmbProvince
             }
         }, {
             display: '城市',
+            width: 80,
             render: function (r, d) {
 
                 return r.cmbCity
             }
         }, {
             display: '区县',
+            width: 80,
             render: function (r, d) {
 
                 return r.cmbArea
@@ -72,12 +86,14 @@ Template.orders.onRendered(function () {
             }
         }, {
             display: '购买数量',
+            width: 50,
             render: function (r, d) {
 
                 return r.number
             }
         }, {
             display: '价格',
+            width: 80,
             render: function (r, d) {
 
                 return r.total
@@ -90,17 +106,16 @@ Template.orders.onRendered(function () {
                 return r.liuyan
             }
         }],
-        width: '100%',
         height: '100%',
         pageSize: 30,
         pageSizeOptions: [30, 60, 100, 200],
         dataAction: "client",
-        rownumbers: true,
+        rownumbers: true
     });
 
     Tracker.autorun(function () {
         var jsonObj = {};
-        jsonObj.Rows = Orders.find().fetch();
+        jsonObj.Rows = Orders.find({}, {sort: {createAt: -1}}).fetch();
         grid.set({
             data: jsonObj
         });

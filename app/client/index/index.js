@@ -30,6 +30,10 @@ Template.site.events({
         const cmbArea = $('#cmbArea').val();
         const address = $('#address').val();
         const liuyan = $('#liuyan').val();
+        const productName = '130张面值990元兑换：价格990元';
+
+        const telLength = tel.toString().length;
+
         if (!username) {
             alert('请填写姓名');
             return;
@@ -43,7 +47,7 @@ Template.site.events({
             return;
         }
 
-        if (!(/^(13[0-9]|15[0|3|6|7|8|9]|18[8|9])\d{8}$/.test(tel))) {
+        if (telLength !== 11) {
             alert('请填写正确的手机号');
             return;
         }
@@ -58,6 +62,7 @@ Template.site.events({
             cmbArea: cmbArea,
             address: address,
             liuyan: liuyan,
+            productName: productName,
             createAt: new Date()
         }, (err, res) => {
             if (err) {
@@ -68,7 +73,7 @@ Template.site.events({
                 $('#total').html('¥' + 990);
                 $('#username').val('');
                 $('#address').val('');
-                $('#liuyan').val('');
+                $('#liuyan').val('请尽快安排发货，送货之前手机联系，谢谢');
                 $('#tel').val('');
             }
         });

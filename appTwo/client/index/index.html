@@ -1,0 +1,116 @@
+<template name="site">
+    {{#if Template.subscriptionsReady}}
+
+        <div id="top" class="shun-container">
+            <img src="http://shundata.oss-cn-qingdao.aliyuncs.com/WechatIMG3.jpeg"/>
+        </div>
+        <div id="tips" class="shun-title"><p>个人信息填写</p></div>
+        <div class="shun-bd">
+            <div class="shun-xzcp">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">选择产品</div>
+                <select class="shun-xzcp-select">
+                    <option class="shun-xzcp-select-opt" value="jg">140张面值1998元兑换：价格1998元</option>
+                </select>
+            </div>
+
+            <div class="shun-sl">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">数量</div>
+                <div class="min" id="min"><span>-</span></div>
+                <input class="text_box" id="number" name="" type="text" value="1"/>
+            </div>
+
+            <div class="shun-sl">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">价格</div>
+                <div class="shun-xzcp-number" id="total">¥1998</div>
+            </div>
+
+            <div class="shun-sl">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">姓名</div>
+                <input class="shun-xzcp-nameInput" id="username"/>
+            </div>
+
+            <div class="shun-xzcp">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">手机号码</div>
+                <input type="number" class="shun-xzcp-nameInput" id="tel"/>
+            </div>
+
+            <div class="shun-xzcp">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">所在地区</div>
+                <div class="shun-area">
+                    <select id="cmbProvince" class="shun-area-sel"></select>
+                    <select id="cmbCity" class="shun-area-sel"></select>
+                    <select id="cmbArea" class="shun-area-sel"></select>
+                </div>
+            </div>
+
+            <div class="shun-xzcp">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">详细地址</div>
+                <input class="shun-xzcp-nameInput" id="address"/>
+            </div>
+
+            <div class="shun-xzcp">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">付款方式</div>
+                <select class="shun-xzcp-fk">
+                    <option class="shun-xzcp-select-opt" value="fk">货到付款</option>
+                </select>
+            </div>
+
+            <div class="shun-sl">
+                <div class="shun-ness">*</div>
+                <div class="shun-xzcp-title">留言</div>
+                <input value="请尽快安排发货，送货之前手机联系，谢谢" class="shun-xzcp-nameInput" id="liuyan"/>
+            </div>
+
+            <div class="btn" id="submit">货到付款提交</div>
+            <div class="company">百豹轩文化发展（北京）有限公司 京ICP备13047137号</div>
+
+
+        </div>
+        <div class="shun-title"><p>近期购买</p></div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">北京彭海波【186****1844】 在8分钟前购买了纪念币</div>
+                <div class="swiper-slide">北京石兴强【136****2093】 在10分钟前购买了纪念币</div>
+                <div class="swiper-slide">河北王洪磊【138****1124】 在17分钟前购买了纪念币</div>
+                <div class="swiper-slide">北京彭海波【186****1844】 在18分钟前购买了纪念币</div>
+                <div class="swiper-slide">湖南贾梦涵【150****1922】 在25分钟前购买了纪念币</div>
+                <div class="swiper-slide">河北史桐坤【139****4329】 在26分钟前购买了纪念币</div>
+                <div class="swiper-slide">河北王洪磊【138****1124】 在32分钟前购买了纪念币</div>
+                <div class="swiper-slide">河北史桐坤【139****4329】 在33分钟前购买了纪念币</div>
+                <div class="swiper-slide">河北王洪磊【138****1124】 在40分钟前购买了纪念币</div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="tel:400-667-7725" class="footer-left">电话下单</a>
+            <a href="#tips" class="footer-right">货到付款下单</a>
+        </div>
+
+    {{else}}
+        <div class="sk-all">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+        </div>
+    {{/if}}
+</template>
+
+
+
+

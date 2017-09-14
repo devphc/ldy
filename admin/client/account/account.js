@@ -34,7 +34,7 @@ Template.login.events({
         }, function(error, result) {
             if (typeof result == "object") {
                 facc.set(result);
-                alert(result.nickname + ',欢迎回来');
+                alert('您好,欢迎回来');
                 facc.backto();
             } else if (result == "ERROR_RIGHT") {
                 alert('权限不足');

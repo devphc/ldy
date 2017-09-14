@@ -1,1 +1,0 @@
-Actives = new Meteor.Collection("actives");
